@@ -25,7 +25,7 @@ jobs:
     - name: Commit changes
       run: |
         git add .
-        git remote set-url origin https://nt168h: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@github.com/nt168h/downloads.git
+        git remote set-url origin https://nt168h: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@github.com/nt168h/downloads.git
         git commit -m "Add downloaded file"
         git push git@github.com:nt168h/downloads.git HEAD:main
 
