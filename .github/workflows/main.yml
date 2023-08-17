@@ -1,0 +1,31 @@
+name: Download and Add File to Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  download-and-add-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Download File
+      run: |
+        wget https://download846.mediafire.com/sokenzlmd1dgh_8ukYqXSXd8pvd3rr0QZwEsUpnik-JPvxg9DtNfuRHbL9etw9hyWuMcM5SgkYp3PreUkb8qkRItyA69OM_f5tkj-h2YaUxVg7ER8cRnFKb2_xYdGfQPfnFZifUOdmHQWf2Zih4CUXaqHPiaL74KiZtgKKHaMqgg/m6b320dmwxmn7gf/YouMi+Vol.895.rar
+
+    - name: Set up Git
+      run: |
+        git config --local user.email "nt168h@gmail.com"
+        git config --local user.name "nt168h"
+
+    - name: Commit changes
+      run: |
+        git add .
+        git remote set-url origin https://nt168h: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@github.com/nt168h/downloads.git
+        git commit -m "Add downloaded file"
+        git push git@github.com:nt168h/downloads.git HEAD:main
+
